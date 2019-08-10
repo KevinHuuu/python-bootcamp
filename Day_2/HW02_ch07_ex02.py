@@ -25,15 +25,33 @@
 
 ###############################################################################
 # Imports
-
+import math
 
 # Body
+def eval_loop():
+    """return a math result with a given python string formula.
+    """
+    while(True):
+        print('please input a expression')
+        input_v = input()
+        if input_v == 'done':
+            try:
+                print('last expression calculated is: ', res)
+                break
+            except:
+                print('No previous expression evaluated! ')
+                break
+        else:
+            res = input_v
+            try:
+                print(eval(input_v))
+            except:
+                print('Illegal input！')
 
 
 ###############################################################################
 def main():
-    pass  # Remove this line and uncomment below once eval_loop is defined.
-    # print(eval_loop())
+    eval_loop()
 
 
 if __name__ == '__main__':

@@ -15,7 +15,7 @@
 
 
 def any_lowercase1(s):
-    """Explain what is wrong, if anything, here.
+    """only check the first char in the given s.
     """
     for c in s:
         if c.islower():
@@ -25,7 +25,7 @@ def any_lowercase1(s):
 
 
 def any_lowercase2(s):
-    """Explain what is wrong, if anything, here.
+    """ 'c' is an actual char, not a variable representing the char in s.
     """
     for c in s:
         if 'c'.islower():
@@ -35,7 +35,7 @@ def any_lowercase2(s):
 
 
 def any_lowercase3(s):
-    """Explain what is wrong, if anything, here.
+    """the flag will be covered, can only test whther the last char is lowercase or not.
     """
     for c in s:
         flag = c.islower()
@@ -43,7 +43,7 @@ def any_lowercase3(s):
 
 
 def any_lowercase4(s):
-    """Explain what is wrong, if anything, here.
+    """this one is correct. test whether a lowercase occured.
     """
     flag = False
     for c in s:
@@ -52,7 +52,7 @@ def any_lowercase4(s):
 
 
 def any_lowercase5(s):
-    """Explain what is wrong, if anything, here.
+    """test whether there is an uppercase char occured, not lowercase.
     """
     for c in s:
         if not c.islower():
@@ -67,7 +67,10 @@ def main():
     # call that function with a string for which the function returns
     # incorrectly.
     # ex.: any_lowercase_("thisstringmessesupthefunction")
-    print("Hello World!")
+    print(any_lowercase1("DtO"))
+    print(any_lowercase2("D0"))
+    print(any_lowercase3("tO"))
+    # print(any_lowercase4("tO"))
     print(any_lowercase5("tO"))
 
 if __name__ == '__main__':

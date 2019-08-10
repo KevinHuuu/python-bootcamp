@@ -5,9 +5,9 @@
 # argument. For example, do_twice is a function that takes a function object
 # as an argument and calls it twice:
 
-# def do_twice(f):
-#     f()
-#     f()
+def do_twice(f, para1):
+    f(para1)
+    f(para1)
 
 # Here's an example that uses `do_twice` to call a function named `print_spam`
 # twice.
@@ -29,6 +29,15 @@
 ###############################################################################
 # Write your functions below:
 # Body
+def print_twice(str1):
+    print(str1)
+
+
+do_twice(print_twice, 'spam')
+
+def do_four(f, para1):
+    do_twice(f, para1)
+    do_twice(f, para1)
 
 
 # Write your functions above:
@@ -38,7 +47,7 @@ def main():
     When complete have one function call in this function:
     do_four(print_twice, [some_value])
     """
-    print("Hello World!")
+    do_four(print_twice, 'The Man From Earth')
 
 
 if __name__ == "__main__":

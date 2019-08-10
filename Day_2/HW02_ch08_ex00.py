@@ -22,14 +22,26 @@
 
 
 # Body
-
+def count(word, char):
+    """count a perticular char in a word.
+    
+    Arguments:
+        word {str} -- a word.
+        char {[type]} -- a letter to be counted.
+    """
+    count = 0
+    for letter in word:
+        if letter == char:
+            count = count + 1
+    print(count)
 
 ###############################################################################
 def main():
 
     # Remove print("Hello World!") and add several functions calls to count()
     # below, passing various strings and letters
-    print("Hello World!")
+    count('banana', 'a')
+    count('banana and apple', 'p')
 
 
 if __name__ == '__main__':

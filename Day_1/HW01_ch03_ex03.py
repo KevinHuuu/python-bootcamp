@@ -5,18 +5,25 @@
 # have learned so far.
 
 # (1) Write a function that draws a grid like the following:
-# + - - - - + - - - - +
-# |         |         |
-# |         |         |
-# |         |         |
-# |         |         |
-# + - - - - + - - - - +
-# |         |         |
+# + - - - - + - - - - + - - - - + - - - - +
+# |         |         |         |         | 
 # |         |         |
 # |         |         |
 # |         |         |
 # + - - - - + - - - - +
-
+# |         |         |
+# |         |         |
+# |         |         |
+# |         |         |
+# + - - - - + - - - - +
+def two_by_two():
+    x = '+ - - - - + - - - - +'
+    y = '|         |         |'
+    for i in range(2):
+        print(x)
+        for j in range(4):
+            print(y)
+    print(x)
 # Hint: to print more than one value on a line, you can print a
 # comma-separated sequence of values:
 
@@ -39,6 +46,15 @@
 ###############################################################################
 # Write your functions below:
 # Body
+def four_by_four():
+    x = '+ - - - - + - - - - + - - - - + - - - - +'
+    y = '|         |         |         |         |'
+    for i in range (3):
+        print(x)
+        for j in range(4):
+            print(y)
+    print(x)
+
 
 
 # Write your functions above:
@@ -50,7 +66,8 @@ def main():
     four_by_four()
     """
     print("Hello World!")
-
+    two_by_two()
+    four_by_four()
 
 if __name__ == "__main__":
     main()

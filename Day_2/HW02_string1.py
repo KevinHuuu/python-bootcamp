@@ -25,8 +25,17 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    # +++your code here+++
-    return
+    """calculate donuts.
+    
+    Arguments:
+        count {int} -- the number of donuts.
+    Returns:
+        str -- the number of donuts.
+    """
+    if count >= 10:
+        return 'Number of donuts: many'
+    else:
+        return 'Number of donuts: ' + str(count)
 
 
 # B. both_ends
@@ -35,8 +44,19 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-    # +++your code here+++
-    return
+    """return both ends of a string.
+    
+    Arguments:
+        s {str} -- the input string
+    
+    Returns:
+        str -- first 2 and last 2 of s if >4, else ''
+    """
+    if len(s) < 2:
+        return ''
+    else:
+        return s[:2] + s[-2:]
+
 
 
 # C. fix_start
@@ -49,8 +69,17 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-    # +++your code here+++
-    return
+    """fix the start of a string.
+    
+    Arguments:
+        s {str} -- a given string to be fixed.
+    
+    Returns:
+        str -- the origin string with first char type been fixed except the first one.
+    """
+    old_f = s[0]
+    s = s.replace(old_f, '*')
+    return old_f + s[1:]
 
 
 # D. MixUp
@@ -61,8 +90,18 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-    # +++your code here+++
-    return
+    """mix two strings up with swapping their first 2 chars.
+    
+    Arguments:
+        a {str} -- the first string
+        b {str} -- the second string
+    
+    Returns:
+        str -- return swapped two strings in a single string.
+    """
+    temp1 = a[:2]
+    temp2 = b[:2]
+    return temp2 + a[2:] + ' ' + temp1 + b[2:]
 
 
 # Provided simple test() function used in main() to print

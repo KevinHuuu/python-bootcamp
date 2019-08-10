@@ -17,8 +17,20 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-    # +++your code here+++
-    return
+    """make a verb to verbing.
+    
+    Arguments:
+        s {str} -- the original string.
+    
+    Returns:
+        str -- the verbing form of input string s.
+    """
+    if len(s) < 3:
+        return s
+    elif s[-3:] == 'ing':
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
 
 # E. not_bad
@@ -29,9 +41,18 @@ def verbing(s):
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
+import re
 def not_bad(s):
-    # +++your code here+++
-    return
+    """replace not ... bad with good.
+    
+    Arguments:
+        s {str} -- origin string.
+    
+    Returns:
+        str -- not bad been replaced.
+    """
+    return re.sub(r'not(.*?)bad', 'good', s)
+
 
 
 # F. front_back
@@ -42,8 +63,31 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    # +++your code here+++
-    return
+    """return the 2 front and 2 back of 2 strings.
+    
+    Arguments:
+        a {str} -- the first string
+        b {str} -- the second string
+    
+    Returns:
+        [str] -- a single 2 front 2back string.
+    """
+    def split_str(s):
+        """split string to front and back.
+        
+        Arguments:
+            s {str} -- origin string
+        
+        Returns:
+            str -- front
+            str -- back
+        """
+        len_back = len(s) // 2
+        return s[:-len_back], s[-len_back:]
+
+    a_f, a_b = split_str(a)
+    b_f, b_b = split_str(b)
+    return a_f + b_f + a_b + b_b
 
 
 # Simple provided test() function used in main() to print
