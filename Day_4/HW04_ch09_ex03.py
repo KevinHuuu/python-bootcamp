@@ -21,29 +21,53 @@
 # Body
 
 
-def avoids():
-    """ return True if word NOT forbidden"""
-    pass
+def avoids(word, forbid_letters):
+    for char in word:
+        if char in forbid_letters:
+            return False
+    return True
 
 
-def forbidden_prompt():
-    """ print count of words NOT forbidden by input"""
-    pass
+def forbidden_prompt(l_word):
+    forbid_letters = input('enter forbidden letters')
+    for word in l_word:
+        flag = False
+        for char in word:
+            if char in forbid_letters:
+                flag = True
+        if flag == False:
+            print('{} does not contain any letter in {}'.format(word, forbid_letters))
 
 
-def forbidden_param():
-    """ return count of words NOT forbidden by param"""
-    pass
+def forbidden_param(l_word, forbid_letters):
+    for word in l_word:
+        flag = False
+        for char in word:
+            if char in forbid_letters:
+                flag = True
+        if flag == False:
+            print('{} does not contain any letter in {}'.format(word, forbid_letters))
 
+def find_five(l_word):
+    from collections import Counter
+    total_char = ''.join(l_word)
+    lookup = Counter(total_char)
+    
+    five_letters = list(zip(*sorted(lookup.items(), key=lambda x:x[1])[:5]))[0]
+    print(five_letters)
+    for word in l_word:
+        flag = False
+        for char in word:
+            if char in five_letters:
+                flag = True
+        if flag:
+            print(word, ' is excluded by ', five_letters)
 
-def find_five():
-    pass
 
 
 ##############################################################################
 def main():
-    pass
-    # Your final submission should only call five_five
+    find_five(['apple', 'banana', 'peach', 'watermelon', 'jake', 'hose'])
 
 
 if __name__ == '__main__':

@@ -47,7 +47,9 @@ def any_lowercase4(s):
     """
     flag = False
     for c in s:
-        flag = flag or c.islower()
+        if c.islower():
+            flag = True
+        # flag = (flag or c.islower())
     return flag
 
 
@@ -58,7 +60,6 @@ def any_lowercase5(s):
         if not c.islower():
             return False
     return True
-
 
 ###############################################################################
 def main():

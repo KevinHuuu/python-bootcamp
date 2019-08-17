@@ -89,7 +89,6 @@ def front_back(a, b):
     b_f, b_b = split_str(b)
     return a_f + b_f + a_b + b_b
 
-
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):

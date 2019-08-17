@@ -20,8 +20,7 @@ def infinite_stairway_room(count=0):
             print("but you're not happy about it")
         infinite_stairway_room(count + 1)
     # option 2 == ?????
-    if next == option_2:
-        pass
+
 
 
 def gold_room():
@@ -50,15 +49,15 @@ def bear_room():
     while True:
         next = input("> ")
 
-        if next == "take honey":
+        if next == "take" or next = "honey":
             dead("The bear looks at you then laughs at you.")
-        elif next == "taunt bear" and not bear_moved:
+        elif next == "taunt" and not bear_moved:
             print("The bear has moved from the door. You can go through it"
                   "now.")
             bear_moved = True
-        elif next == "taunt bear" and bear_moved:
+        elif next == "taunt" and bear_moved:
             dead("The bear gets angry and chases you.")
-        elif next == "open door" and bear_moved:
+        elif (next == "open" or next == "door") and bear_moved:
             gold_room()
         else:
             print("I got no idea what that means.")
@@ -85,7 +84,7 @@ def dead(why):
 
 
 ############################################################################
-def start():
+def main():
     # START the TextAdventure game
     print("You are in a dark room.")
     print("There is a door to your right and left.")
@@ -102,4 +101,4 @@ def start():
 
 
 if __name__ == '__main__':
-    start()
+    main()

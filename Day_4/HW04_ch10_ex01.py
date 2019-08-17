@@ -11,3 +11,15 @@
 # In your final submission:
 #  - Do not print anything extraneous.
 #  - Do not put anything but pass in main()
+
+def nested_sum(alist):
+    new_list = []
+    for i in alist:
+        if not isinstance(i, int):
+            new_list.append(nested_sum(i))
+        else:
+            new_list.append(i)
+    return sum(new_list)
+
+if __name__ == "__main__":
+    pass

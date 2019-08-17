@@ -99,7 +99,9 @@ def is_palindrome(s):
 # Note: Please use the provided definition and only plan for positive integers
 # (whole numbers not including zero)
 # When you submit only include your final function: is_power
-def is_power(num1, num2):
+
+
+def is_power(num1, num2, large=True):
     """Judge whether num1 is a power of num2.
     
     Arguments:
@@ -109,8 +111,9 @@ def is_power(num1, num2):
     Returns:
         bool -- returns whether num1 is a power of num2.
     """
+
     if num1 % num2 == 0:
-        return True
+        return is_power(num1//num2, num2, False)
     else:
         return False
 
